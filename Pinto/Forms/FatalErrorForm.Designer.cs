@@ -40,28 +40,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.Size = new System.Drawing.Size(166, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pinto! has ran into an fatal error!";
+            this.label1.Text = "Pinto！遇到了一个致命的错误!";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 9);
+            this.label2.Location = new System.Drawing.Point(184, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Sorry about that.... ";
+            this.label2.Text = "很抱歉....";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(377, 13);
+            this.label3.Size = new System.Drawing.Size(279, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "If you want to prevent this from happening in the future, report the attached log" +
-    "";
+            this.label3.Text = "如果你想防止今后发生这种情况，请报告所附的日志";
             // 
             // rtxtLog
             // 
@@ -89,7 +88,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FatalErrorForm";
-            this.Text = "Pinto! - Fatal Error";
+            this.Text = "Pinto! - 致命的错误";
             this.ResumeLayout(false);
             this.PerformLayout();
 

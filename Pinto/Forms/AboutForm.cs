@@ -19,7 +19,7 @@ namespace PintoNS.Forms
 
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            lVersion.Text = $"Version {Program.VERSION}";
+            lVersion.Text = $"版本 {Program.VERSION}";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "添加";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -58,9 +58,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Username:";
+            this.label1.Text = "用户名：";
             // 
             // AddContactForm
             // 
@@ -77,7 +77,7 @@
             this.MinimizeBox = false;
             this.Name = "AddContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Pinto! - Add contact";
+            this.Text = "Pinto! - 添加联系人";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -66,19 +66,19 @@
             this.lVersion.BackColor = System.Drawing.Color.Transparent;
             this.lVersion.Location = new System.Drawing.Point(12, 245);
             this.lVersion.Name = "lVersion";
-            this.lVersion.Size = new System.Drawing.Size(89, 13);
+            this.lVersion.Size = new System.Drawing.Size(55, 13);
             this.lVersion.TabIndex = 3;
-            this.lVersion.Text = "Version unknown";
+            this.lVersion.Text = "版本不明";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(99, 154);
+            this.label3.Location = new System.Drawing.Point(115, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Take a deep breath...";
+            this.label3.Text = "深吸一口气...";
             // 
             // AboutForm
             // 
@@ -101,7 +101,7 @@
             this.Name = "AboutForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Pinto! - About";
+            this.Text = "Pinto! - 关于";
             this.Load += new System.EventHandler(this.AboutForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

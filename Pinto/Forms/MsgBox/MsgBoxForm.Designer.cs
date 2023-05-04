@@ -45,9 +45,9 @@
             this.lTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTitle.Location = new System.Drawing.Point(50, 19);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(66, 20);
+            this.lTitle.Size = new System.Drawing.Size(57, 20);
             this.lTitle.TabIndex = 0;
-            this.lTitle.Text = "MsgBox";
+            this.lTitle.Text = "信息框";
             // 
             // lBody
             // 
@@ -59,7 +59,7 @@
             this.lBody.Name = "lBody";
             this.lBody.Size = new System.Drawing.Size(327, 63);
             this.lBody.TabIndex = 1;
-            this.lBody.Text = "This is a msgbox";
+            this.lBody.Text = "这是一个信息框";
             // 
             // pbIcon
             // 
@@ -89,7 +89,7 @@
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 23);
             this.btnYes.TabIndex = 5;
-            this.btnYes.Text = "Yes";
+            this.btnYes.Text = "是的";
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
@@ -100,7 +100,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "好的";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -111,7 +111,7 @@
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(75, 23);
             this.btnNo.TabIndex = 7;
-            this.btnNo.Text = "No";
+            this.btnNo.Text = "不是";
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
@@ -132,7 +132,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MsgBox";
+            this.Text = "信息框";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Notification_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).EndInit();
             this.pHeader.ResumeLayout(false);

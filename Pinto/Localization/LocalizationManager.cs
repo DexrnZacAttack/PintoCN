@@ -10,7 +10,7 @@ namespace PintoNS.Localization
 {
     public class LocalizationManager
     {
-        public static EnglishLanguage DefaultLanguage = new EnglishLanguage();
+        public static ChineseLanguage DefaultLanguage = new ChineseLanguage();
         public Language CurrentLanguage = DefaultLanguage;
         public readonly List<Language> Languages = new List<Language>(new Language[] { DefaultLanguage });
     }

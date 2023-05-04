@@ -141,7 +141,7 @@ namespace PintoNS
         {
             tcTabs.TabPages.Clear();
             tcTabs.TabPages.Add(tpConnecting);
-            lConnectingStatus.Text = "Connecting...";
+            lConnectingStatus.Text = "连接...";
             Program.Console.WriteMessage($"[Networking] 登记为 {username} 在 {ip}:{port}...");
 
             NetManager = new NetworkManager(this);

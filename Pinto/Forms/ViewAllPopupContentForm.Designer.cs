@@ -54,7 +54,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View popup content";
+            this.Text = "查看弹出窗口内容";
             this.ResumeLayout(false);
 
         }

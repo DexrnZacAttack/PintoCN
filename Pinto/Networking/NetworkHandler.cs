@@ -32,7 +32,7 @@ namespace PintoNS.Networking
         public void HandlePacket(IPacket packet) 
         {
             if (packet.GetID() != 255)
-                Program.Console.WriteMessage($"[Networking] Received packet {packet.GetType().Name.ToUpper()}" +
+                Program.Console.WriteMessage($"[联网] 收到的数据包 {packet.GetType().Name.ToUpper()}" +
                     $" ({packet.GetID()})");
             packet.Handle(this);
         }
@@ -49,11 +49,11 @@ namespace PintoNS.Networking
         public void HandleLogoutPacket(PacketLogout packet)
         {
             mainForm.NetManager.IsActive = false;
-            Program.Console.WriteMessage($"[Networking] Kicked by the server: {packet.Reason}");
-            mainForm.NetManager.NetClient.Disconnect($"Kicked by the server -> {packet.Reason}");
+            Program.Console.WriteMessage($"[联网] 被服务器踢了： {packet.Reason}");
+            mainForm.NetManager.NetClient.Disconnect($"被服务器踢了 -> {packet.Reason}");
             mainForm.Invoke(new Action(() =>
             {
-                MsgBox.ShowNotification(mainForm, packet.Reason, "Kicked by the server", 
+                MsgBox.ShowNotification(mainForm, packet.Reason, "被服务器踢了", 
                     MsgBoxIconType.WARNING, true);
             }));
         }
@@ -65,8 +65,8 @@ namespace PintoNS.Networking
                 MessageForm messageForm = mainForm.GetMessageFormFromReceiverName(packet.ContactName);
                 if (messageForm == null) 
                 {
-                    Program.Console.WriteMessage($"[Networking]" +
-                        $" Unable to get a message form for {packet.ContactName}!");
+                    Program.Console.WriteMessage($"[联网]" +
+                        $" 无法得到一个信息表格，用于 {packet.ContactName}!");
                     return;
                 }
 
@@ -80,8 +80,8 @@ namespace PintoNS.Networking
                 if (Form.ActiveForm != messageForm && !messageForm.HasBeenInactive)
                 {
                     messageForm.HasBeenInactive = true;
-                    mainForm.PopupController.CreatePopup($"Received a new message from {packet.ContactName}!", 
-                        "New message");
+                    mainForm.PopupController.CreatePopup($"收到一个新消息，来自 {packet.ContactName}!",
+                        "新消息");
                     new SoundPlayer() { Stream = Sounds.IM }.Play();
                 }
             }));
@@ -97,7 +97,7 @@ namespace PintoNS.Networking
 
         public void HandleAddContactPacket(PacketAddContact packet)
         {
-            Program.Console.WriteMessage($"[Contacts] Adding {packet.ContactName} to the contact list...");
+            Program.Console.WriteMessage($"[联系人] 添加 {packet.ContactName} 到联系人列表中...");
             mainForm.Invoke(new Action(() =>
             {
                 mainForm.ContactsMgr.AddContact(new Contact() { Name = packet.ContactName, Status = packet.Status });
@@ -106,7 +106,7 @@ namespace PintoNS.Networking
 
         public void HandleRemoveContactPacket(PacketRemoveContact packet)
         {
-            Program.Console.WriteMessage($"[Contacts] Removing {packet.ContactName} from the contact list...");
+            Program.Console.WriteMessage($"[联系人] 移除 {packet.ContactName} 从联系人列表中...");
             mainForm.Invoke(new Action(() =>
             {
                 mainForm.ContactsMgr.RemoveContact(mainForm.ContactsMgr.GetContact(packet.ContactName));
@@ -116,7 +116,7 @@ namespace PintoNS.Networking
         public void HandleStatusPacket(PacketStatus packet)
         {
             Program.Console.WriteMessage(
-                $"[General] Status change: " +
+                $"[一般] 状态改变： " +
                 $"{(string.IsNullOrWhiteSpace(packet.ContactName) ? "SELF" : packet.ContactName)} -> {packet.Status}");
             
             mainForm.Invoke(new Action(() =>
@@ -129,21 +129,21 @@ namespace PintoNS.Networking
 
                     if (contact == null) 
                     {
-                        Program.Console.WriteMessage($"[General] Received invalid status change" +
-                            $", \"{packet.ContactName}\" is not a valid contact!");
+                        Program.Console.WriteMessage($"[一般] 收到无效的状态变化" +
+                            $", \"{packet.ContactName}\" 不是一个有效的联系人!");
                         return;
                     }
 
                     if (packet.Status == UserStatus.OFFLINE && contact.Status != UserStatus.OFFLINE)
                     {
-                        mainForm.PopupController.CreatePopup($"{packet.ContactName} is now offline",
-                            "Status change");
+                        mainForm.PopupController.CreatePopup($"{packet.ContactName} 现已下线",
+                            "状态变化");
                         new SoundPlayer() { Stream = Sounds.OFFLINE }.Play();
                     }
                     else if (packet.Status != UserStatus.OFFLINE && contact.Status == UserStatus.OFFLINE)
                     {
-                        mainForm.PopupController.CreatePopup($"{packet.ContactName} is now online",
-                            "Status change");
+                        mainForm.PopupController.CreatePopup($"{packet.ContactName} 现已上线",
+                            "状态变化");
                         new SoundPlayer() { Stream = Sounds.ONLINE }.Play();
                     }
 
@@ -154,11 +154,11 @@ namespace PintoNS.Networking
 
         public void HandleContactRequestPacket(PacketContactRequest packet)
         {
-            Program.Console.WriteMessage($"[Networking] Received contact request from {packet.ContactName}");
+            Program.Console.WriteMessage($"[联网] 收到了以下的联系请求 {packet.ContactName}");
             mainForm.Invoke(new Action(() =>
             {
                 MsgBox.ShowPromptNotification(mainForm,
-                    $"{packet.ContactName} wants to add you to their contact list. Proceed?", "Contact request",
+                    $"{packet.ContactName} 想把你加入他们的联系名单。继续？", "联系请求",
                     MsgBoxIconType.QUESTION, true,
                     (MsgBoxButtonType button) =>
                     {
@@ -169,7 +169,7 @@ namespace PintoNS.Networking
 
         public void HandleClearContactsPacket()
         {
-            Program.Console.WriteMessage($"[Contacts] Clearing contact list...");
+            Program.Console.WriteMessage($"[联系人] 清除联系人名单...");
             mainForm.Invoke(new Action(() =>
             {
                 mainForm.dgvContacts.Rows.Clear();
@@ -201,7 +201,7 @@ namespace PintoNS.Networking
 
         public void SendContactRequestPacket(string name, bool approved)
         {
-            networkClient.AddToSendQueue(new PacketContactRequest($"{name}:{(approved ? "yes" : "no")}"));
+            networkClient.AddToSendQueue(new PacketContactRequest($"{name}:{(approved ? "是的" : "不是")}"));
         }
 
         public void SendAddContactPacket(string name)

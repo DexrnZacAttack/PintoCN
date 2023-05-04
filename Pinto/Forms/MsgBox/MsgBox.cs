@@ -10,7 +10,7 @@ namespace PintoNS.Forms.Notification
 {
     public static class MsgBox
     {
-        public static void ShowNotification(Form parent, string body, string title = "Notification", 
+        public static void ShowNotification(Form parent, string body, string title = "通知书", 
             MsgBoxIconType icon = MsgBoxIconType.INFORMATION, 
             bool nonBlocking = false, Action < MsgBoxButtonType> callback = null) 
         {
@@ -51,7 +51,7 @@ namespace PintoNS.Forms.Notification
                 notification.ShowDialog(parent);
         }
 
-        public static void ShowPromptNotification(Form parent, string body, string title = "Notification",
+        public static void ShowPromptNotification(Form parent, string body, string title = "通知书",
             MsgBoxIconType icon = MsgBoxIconType.INFORMATION,
             bool nonBlocking = false, Action<MsgBoxButtonType> callback = null)
         {

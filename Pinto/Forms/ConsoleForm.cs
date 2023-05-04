@@ -44,7 +44,7 @@ namespace PintoNS.Forms
             string cmd = txtInput.Text.Trim();
             txtInput.Text = "";
 
-            WriteMessage("Commands are currently unavailable!");
+            WriteMessage("发送命令目前不可用!");
         }
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)

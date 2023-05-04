@@ -34,7 +34,7 @@ namespace PintoNS.Networking
         {
             try
             {
-                if (IsConnected) Disconnect("Reconnecting");
+                if (IsConnected) Disconnect("重新连接");
                 ignoreDisconnectReason = false;
 
                 tcpClient = new TcpClient();
@@ -78,8 +78,8 @@ namespace PintoNS.Networking
         public void AddToSendQueue(IPacket packet) 
         {
             if (!IsConnected) return;
-            Program.Console.WriteMessage($"[Networking] Added packet {packet.GetType().Name.ToUpper()}" +
-                $" ({packet.GetID()}) to the send queue");
+            Program.Console.WriteMessage($"[Networking] 添加的数据包 {packet.GetType().Name.ToUpper()}" +
+                $" ({packet.GetID()}) 到发送队列中");
             packetSendQueue.AddLast(packet);
         }
 
@@ -107,13 +107,13 @@ namespace PintoNS.Networking
                 }
                 catch (Exception ex)
                 {
-                    Disconnect($"Internal error -> {ex.Message}");
+                    Disconnect($"内部错误 -> {ex.Message}");
                     Program.Console.WriteMessage($"[Networking]" +
-                        $" Unable to send packet {packet.GetID()}: {ex}");
+                        $" 无法发送数据包 {packet.GetID()}: {ex}");
                     MsgBox.ShowNotification(null,
-                        "An internal error has occured! For more information," +
-                        " check the console (Help > Toggle Console)",
-                        "Internal Error",
+                        "发生了一个内部错误! 欲了解更多信息、" +
+                        " 检查控制台（帮助>切换控制台）。",
+                        "内部错误",
                         MsgBoxIconType.ERROR);
                 }
             }
@@ -139,12 +139,12 @@ namespace PintoNS.Networking
                         }
                         else
                         {
-                            throw new ConnectionException("Received invalid packet -> " + packetID);
+                            throw new ConnectionException("收到了无效的数据包 -> " + packetID);
                         }
                     }
                     else
                     {
-                        throw new ConnectionException("Server disconnect");
+                        throw new ConnectionException("服务器断开连接");
                     }
 
                     Thread.Sleep(1);
@@ -153,12 +153,12 @@ namespace PintoNS.Networking
                 {
                     if (!(ex is IOException || ex is ConnectionException))
                     {
-                        Disconnect($"Internal error -> {ex.Message}");
-                        Program.Console.WriteMessage($"Internal error: {ex}");
-                        MsgBox.ShowNotification(null, 
-                            "An internal error has occured! For more information," +
-                            " check the console (Help > Toggle Console)", 
-                            "Internal Error", 
+                        Disconnect($"内部错误 -> {ex.Message}");
+                        Program.Console.WriteMessage($"内部错误： {ex}");
+                        MsgBox.ShowNotification(null,
+                        "发生了一个内部错误! 欲了解更多信息、" +
+                        " 检查控制台（帮助>切换控制台）。",
+                        "内部错误",
                             MsgBoxIconType.ERROR);
                     }
                     else 

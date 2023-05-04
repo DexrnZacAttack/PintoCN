@@ -25,7 +25,7 @@ namespace PintoNS.Forms
         {
             if (string.IsNullOrWhiteSpace(txtContactName.Text))
             {
-                MsgBox.ShowNotification(this, "Invalid username!", "Error", MsgBoxIconType.ERROR);
+                MsgBox.ShowNotification(this, "无效的用户名!", "误差", MsgBoxIconType.ERROR);
                 return;
             }
             Close();

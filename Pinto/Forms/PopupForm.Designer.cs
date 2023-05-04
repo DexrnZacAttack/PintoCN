@@ -59,10 +59,10 @@
             this.lSeeContent.AutoSize = true;
             this.lSeeContent.Location = new System.Drawing.Point(61, 155);
             this.lSeeContent.Name = "lSeeContent";
-            this.lSeeContent.Size = new System.Drawing.Size(78, 13);
+            this.lSeeContent.Size = new System.Drawing.Size(79, 13);
             this.lSeeContent.TabIndex = 3;
             this.lSeeContent.TabStop = true;
-            this.lSeeContent.Text = "See all content";
+            this.lSeeContent.Text = "查看所有内容";
             this.lSeeContent.Visible = false;
             this.lSeeContent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lSeeContent_LinkClicked);
             // 
@@ -84,7 +84,7 @@
             this.lBody.Name = "lBody";
             this.lBody.Size = new System.Drawing.Size(175, 119);
             this.lBody.TabIndex = 1;
-            this.lBody.Text = "Body";
+            this.lBody.Text = "身体";
             this.lBody.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lTitle
@@ -94,7 +94,7 @@
             this.lTitle.Name = "lTitle";
             this.lTitle.Size = new System.Drawing.Size(150, 23);
             this.lTitle.TabIndex = 0;
-            this.lTitle.Text = "Title";
+            this.lTitle.Text = "标题";
             // 
             // tAnim
             // 

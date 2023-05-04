@@ -29,8 +29,8 @@ namespace PintoNS.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Unavailable", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("一般");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("不可用", new System.Windows.Forms.TreeNode[] {
             treeNode1});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.tvSections = new System.Windows.Forms.TreeView();
@@ -44,9 +44,9 @@ namespace PintoNS.Forms
             this.tvSections.Location = new System.Drawing.Point(12, 12);
             this.tvSections.Name = "tvSections";
             treeNode1.Name = "nUnavailableGeneral";
-            treeNode1.Text = "General";
+            treeNode1.Text = "一般";
             treeNode2.Name = "nUnavailable";
-            treeNode2.Text = "Unavailable";
+            treeNode2.Text = "不可用";
             this.tvSections.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
             this.tvSections.Size = new System.Drawing.Size(135, 385);
@@ -57,22 +57,22 @@ namespace PintoNS.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(150, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Nothing to see here yet";
+            this.label1.Text = "这里还没有什么可看的";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(150, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 13);
+            this.label2.Size = new System.Drawing.Size(154, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Options will be available in the next release!";
+            this.label2.Text = "选项将在下一个版本中提供!";
             // 
             // header1
             // 
-            this.header1.Content = "Unavailable";
+            this.header1.Content = "不可用";
             this.header1.Location = new System.Drawing.Point(153, 12);
             this.header1.Name = "header1";
             this.header1.Size = new System.Drawing.Size(401, 20);
@@ -95,7 +95,7 @@ namespace PintoNS.Forms
             this.MinimumSize = new System.Drawing.Size(582, 463);
             this.Name = "OptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Pinto! - Options";
+            this.Text = "平托! - 选项";
             this.ResumeLayout(false);
             this.PerformLayout();
 

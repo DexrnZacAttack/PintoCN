@@ -29,14 +29,14 @@ namespace PintoNS.Forms
             this.mainForm = mainForm;
             InWindowPopupController = new InWindowPopupController(this, 25);
             Receiver = receiver;
-            Text = $"Pinto! - Instant Messaging - Chatting with {Receiver.Name}";
+            Text = $"Pinto! - 即时通讯 - 你正在与人聊天 {Receiver.Name}";
             UpdateColorPicker();
             LoadChat();
         }
 
         private void LoadChat()
         {
-            Program.Console.WriteMessage("[General] Loading chat...");
+            Program.Console.WriteMessage("[General] 正在加载聊天...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "chats",  $"{Receiver.Name}.txt");
@@ -46,16 +46,16 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to load the chat: {ex}");
+                    $" 无法加载聊天记录： {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to load the chat!",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法加载聊天记录!",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
         private void SaveChat()
         {
-            Program.Console.WriteMessage("[General] Saving chat...");
+            Program.Console.WriteMessage("[General] 保存聊天记录...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "chats", $"{Receiver.Name}.txt");
@@ -64,16 +64,16 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to save the chat: {ex}");
+                    $" 无法保存聊天记录： {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to save the chat",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法保存聊天记录",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
         private void DeleteChat() 
         {
-            Program.Console.WriteMessage("[General] Deleting chat...");
+            Program.Console.WriteMessage("[General] 删除聊天...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "chats", $"{Receiver.Name}.txt");
@@ -83,10 +83,10 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to delete the chat: {ex}");
+                    $" 无法删除聊天记录： {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to delete the chat",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法删除聊天记录",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
@@ -116,7 +116,7 @@ namespace PintoNS.Forms
                 }
                 catch 
                 { 
-                    WriteMessage("** IMPROPERLY FORMATED MESSAGE **", Color.Red); 
+                    WriteMessage("** 格式不当的信息 **", Color.Red); 
                 }
                 SaveChat();
             }));
@@ -171,7 +171,7 @@ namespace PintoNS.Forms
 
             if (string.IsNullOrWhiteSpace(inputStripped))
             {
-                MsgBox.ShowNotification(this, "The specified message is invalid!", "Error", 
+                MsgBox.ShowNotification(this, "指定的信息是无效的!", "误差", 
                     MsgBoxIconType.ERROR);
                 return;
             }
@@ -207,16 +207,16 @@ namespace PintoNS.Forms
         private void btnTalk_Click(object sender, EventArgs e)
         {
             MsgBox.ShowNotification(this,
-                "This option is unavailable in this version!",
-                "Option Unavailable",
+                "这个功能在这个版本中是不可用的!",
+                "尚未实施",
                 MsgBoxIconType.WARNING);
         }
 
         private void btnBlock_Click(object sender, EventArgs e)
         {
             MsgBox.ShowNotification(this,
-                "This option is unavailable in this version!",
-                "Option Unavailable",
+                "这个功能在这个版本中是不可用的!",
+                "尚未实施",
                 MsgBoxIconType.WARNING);
         }
 

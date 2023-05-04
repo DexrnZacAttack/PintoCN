@@ -95,18 +95,18 @@ namespace PintoNS.Networking
 
         private void NetClient_Disconnected(string reason)
         {
-            Program.Console.WriteMessage($"[Networking] Disconnected: {reason}");
+            Program.Console.WriteMessage($"[联网] 断绝联系： {reason}");
 
             bool wasActive = IsActive;
             IsActive = false;
 
-            if (!reason.Equals("User requested disconnect")) 
+            if (!reason.Equals("用户要求断开连接")) 
             {
                 mainForm.Invoke(new Action(() =>
                 {
                     mainForm.Disconnect();
                     if (!NetHandler.LoggedIn && wasActive)
-                        MsgBox.ShowNotification(mainForm, reason, "Error", MsgBoxIconType.ERROR);
+                        MsgBox.ShowNotification(mainForm, reason, "误差", MsgBoxIconType.ERROR);
                 }));
             }
 

@@ -201,7 +201,7 @@
     <Compile Include="MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Localization\Builtin\EnglishLanguage.cs" />
+    <Compile Include="Localization\Builtin\ChineseLanguage.cs" />
     <Compile Include="Localization\Language.cs" />
     <Compile Include="Localization\LocalizationManager.cs" />
     <Compile Include="Forms\MsgBox\MsgBoxForm.cs">

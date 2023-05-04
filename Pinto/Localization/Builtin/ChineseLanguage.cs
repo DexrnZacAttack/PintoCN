@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PintoNS.Localization.Builtin
 {
-    public class EnglishLanguage : Language
+    public class ChineseLanguage : Language
     {
-        public EnglishLanguage() 
+        public ChineseLanguage() 
         {
             StringMap = new Dictionary<string, string>() 
             {

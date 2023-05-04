@@ -65,7 +65,7 @@
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 5;
-            this.btnSend.Text = "Send";
+            this.btnSend.Text = "发送";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
@@ -79,7 +79,7 @@
             this.Controls.Add(this.rtxtLog);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsoleForm";
-            this.Text = "Pinto! - Console";
+            this.Text = "Pinto! - 控制台";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsoleForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -49,7 +49,7 @@ namespace PintoNS.Networking
         {
             int length = reader.ReadBEInt();
             if (length < 0) 
-                throw new InvalidDataException("Weird string, the length is less than 0!");
+                throw new InvalidDataException("奇怪的字符串，长度小于0!");
             if (length < 1) return "";
 
             byte[] buffer = new byte[length];
@@ -57,7 +57,7 @@ namespace PintoNS.Networking
 
             string str = Encoding.BigEndianUnicode.GetString(buffer);
             if (str.Length > maxLength)
-                throw new ArgumentException($"Received more data than allowed ({str.Length} > {maxLength})");
+                throw new ArgumentException($"收到的数据超过了允许的范围 ({str.Length} > {maxLength})");
 
             return str;
         }
