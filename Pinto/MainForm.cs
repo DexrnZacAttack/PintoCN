@@ -116,8 +116,8 @@ namespace PintoNS
         {
             tcTabs.TabPages.Clear();
             tcTabs.TabPages.Add(tpConnecting);
-            lConnectingStatus.Text = "连接...";
-            Program.Console.WriteMessage($"[Networking] 登录为 {username} 在 {ip}:{port}...");
+            lConnectingStatus.Text = "连接中...";
+            Program.Console.WriteMessage($"[Networking] 正在以 {username} 身份登录 {ip}:{port}...");
             
             NetManager = new NetworkManager(this);
             (bool, Exception) connectResult = await NetManager.Connect(ip, port);
@@ -132,7 +132,7 @@ namespace PintoNS
             else
             {
                 CurrentUser.Name = username;
-                lConnectingStatus.Text = "认证...";
+                lConnectingStatus.Text = "登陆中...";
                 NetManager.Login(username, password);
             }
         }
@@ -141,8 +141,8 @@ namespace PintoNS
         {
             tcTabs.TabPages.Clear();
             tcTabs.TabPages.Add(tpConnecting);
-            lConnectingStatus.Text = "连接...";
-            Program.Console.WriteMessage($"[Networking] 登记为 {username} 在 {ip}:{port}...");
+            lConnectingStatus.Text = "连接中...";
+            Program.Console.WriteMessage($"[Networking] 正在以 {username} 身份注册 {ip}:{port}...");
 
             NetManager = new NetworkManager(this);
             (bool, Exception) connectResult = await NetManager.Connect(ip, port);
@@ -157,20 +157,20 @@ namespace PintoNS
             else
             {
                 CurrentUser.Name = username;
-                lConnectingStatus.Text = "注册...";
+                lConnectingStatus.Text = "注册中...";
                 NetManager.Register(username, password);
             }
         }
 
         public void Disconnect() 
         {
-            Program.Console.WriteMessage("[Networking] 断开连接...");
+            Program.Console.WriteMessage("[Networking] 正在断开连接...");
             bool wasLoggedIn = false;
             if (NetManager != null) 
             {
                 wasLoggedIn = NetManager.NetHandler.LoggedIn;
                 if (NetManager.IsActive)
-                    NetManager.Disconnect("用户要求断开连接");
+                    NetManager.Disconnect("User requested disconnect");
             }
             OnLogout(!wasLoggedIn);
             NetManager = null;
@@ -178,7 +178,7 @@ namespace PintoNS
         
         public MessageForm GetMessageFormFromReceiverName(string name) 
         {
-            Program.Console.WriteMessage($"获得 MessageForm 用于 {name}...");
+            Program.Console.WriteMessage($"正在获取 {name} 的 MessageForm...");
 
             foreach (MessageForm msgForm in MessageForms.ToArray()) 
             {
@@ -186,7 +186,7 @@ namespace PintoNS
                     return msgForm;
             }
 
-            Program.Console.WriteMessage($"创建MessageForm用于 {name}...");
+            Program.Console.WriteMessage($"正在创建 {name} 的 MessageForm...");
             MessageForm messageForm = new MessageForm(this, ContactsMgr.GetContact(name));
             MessageForms.Add(messageForm);
             messageForm.Show();
@@ -196,7 +196,7 @@ namespace PintoNS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Program.Console.WriteMessage("执行首次初始化...");
+            Program.Console.WriteMessage("正在初始化...");
             OnLogout(true);
             if (!Directory.Exists(DataFolder)) 
                 Directory.CreateDirectory(DataFolder);
@@ -206,7 +206,7 @@ namespace PintoNS
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.Console.WriteMessage("辞职...");
+            Program.Console.WriteMessage("正在退出...");
             Disconnect();
         }
 
@@ -243,30 +243,30 @@ namespace PintoNS
         private void tsmiStatusBarStatusOnline_Click(object sender, EventArgs e)
         {
             if (NetManager == null) return;
-            Program.Console.WriteMessage("[General] 改变状态...");
+            Program.Console.WriteMessage("[General] 正在改变状态...");
             NetManager.ChangeStatus(UserStatus.ONLINE);
         }
 
         private void tsmiStatusBarStatusAway_Click(object sender, EventArgs e)
         {
             if (NetManager == null) return;
-            Program.Console.WriteMessage("[General] 改变状态...");
+            Program.Console.WriteMessage("[General] 正在改变状态...");
             NetManager.ChangeStatus(UserStatus.AWAY);
         }
 
         private void tsmiStatusBarStatusBusy_Click(object sender, EventArgs e)
         {
             if (NetManager == null) return;
-            Program.Console.WriteMessage("[General] 改变状态...");
+            Program.Console.WriteMessage("[General] 正在改变状态...");
             NetManager.ChangeStatus(UserStatus.BUSY);
         }
 
         private void tsmiStatusBarStatusInvisible_Click(object sender, EventArgs e)
         {
             if (NetManager == null) return;
-            Program.Console.WriteMessage("[General] 改变状态...");
+            Program.Console.WriteMessage("[General] 正在改变状态...");
             MsgBox.ShowPromptNotification(this, "如果你选择将你的状态改为隐身，" +
-                " 你的联系人将不能给你发信息。你确定你要继续吗？", "状态变化确认", 
+                " 你的联系人将不能给你发信息。你确定你要继续吗？", "是否改变状态？", 
                 MsgBoxIconType.WARNING, false, (MsgBoxButtonType button) => 
             {
                 if (button == MsgBoxButtonType.YES)
@@ -286,7 +286,7 @@ namespace PintoNS
             if (NetManager == null) return;
             if (dgvContacts.SelectedRows.Count < 1)
             {
-                MsgBox.ShowNotification(this, "你没有选择任何联系人!", "误差", MsgBoxIconType.ERROR);
+                MsgBox.ShowNotification(this, "你没有选择任何联系人!", "错误", MsgBoxIconType.ERROR);
                 return;
             }
             string contactName = ContactsMgr.GetContactNameFromRow(dgvContacts.SelectedRows[0].Index);

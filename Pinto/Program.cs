@@ -55,10 +55,10 @@ namespace PintoNS
                 if (!underWine) 
                 {
                     MsgBox.ShowNotification(Console,
-                        $"Pinto！”检测到它正在 Mono 下运行" +
+                        $"Pinto！检测到当前正在 Mono 下运行" +
                         $" 而不是在 Wine 下运行！{Environment.NewLine}" +
-                        $"永远不会支持此执行配置！",
-                        "不支持的执行配置",
+                        $"该运行环境不受支持！",
+                        "不支持的运行环境",
                         MsgBoxIconType.ERROR);
                     return;
                 }
