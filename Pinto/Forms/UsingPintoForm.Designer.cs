@@ -77,7 +77,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -87,7 +87,7 @@
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 1;
-            this.btnConnect.Text = "Connect";
+            this.btnConnect.Text = "连接";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -97,7 +97,7 @@
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(106, 20);
             this.txtIP.TabIndex = 2;
-            this.txtIP.Text = "ponso00.com";
+            this.txtIP.Text = "MYPinto.ddns.net";
             // 
             // nudPort
             // 
@@ -135,9 +135,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(208, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Port:";
+            this.label2.Text = "港口：";
             // 
             // txtPassword
             // 
@@ -152,18 +152,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(19, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Username:";
+            this.label3.Text = "用户名：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(19, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Password:";
+            this.label4.Text = "密码：";
             // 
             // pLoginControls
             // 
@@ -199,10 +199,10 @@
             this.rbLogin.Checked = true;
             this.rbLogin.Location = new System.Drawing.Point(23, 34);
             this.rbLogin.Name = "rbLogin";
-            this.rbLogin.Size = new System.Drawing.Size(170, 17);
+            this.rbLogin.Size = new System.Drawing.Size(157, 17);
             this.rbLogin.TabIndex = 13;
             this.rbLogin.TabStop = true;
-            this.rbLogin.Text = "I already have a Pinto account";
+            this.rbLogin.Text = "我已经有了一个平度账户";
             this.rbLogin.UseVisualStyleBackColor = true;
             // 
             // rbCreate
@@ -210,9 +210,9 @@
             this.rbCreate.AutoSize = true;
             this.rbCreate.Location = new System.Drawing.Point(22, 11);
             this.rbCreate.Name = "rbCreate";
-            this.rbCreate.Size = new System.Drawing.Size(224, 17);
+            this.rbCreate.Size = new System.Drawing.Size(169, 17);
             this.rbCreate.TabIndex = 12;
-            this.rbCreate.Text = "I would like to create a new Pinto account";
+            this.rbCreate.Text = "我想创建一个新的Pinto账户";
             this.rbCreate.UseVisualStyleBackColor = true;
             this.rbCreate.CheckedChanged += new System.EventHandler(this.rbCreate_CheckedChanged);
             // 
@@ -223,9 +223,9 @@
             this.cbSavePassword.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbSavePassword.Location = new System.Drawing.Point(23, 141);
             this.cbSavePassword.Name = "cbSavePassword";
-            this.cbSavePassword.Size = new System.Drawing.Size(196, 17);
+            this.cbSavePassword.Size = new System.Drawing.Size(170, 17);
             this.cbSavePassword.TabIndex = 11;
-            this.cbSavePassword.Text = "Store my password on this computer";
+            this.cbSavePassword.Text = "在这台电脑上存储我的密码";
             this.cbSavePassword.UseVisualStyleBackColor = true;
             this.cbSavePassword.CheckedChanged += new System.EventHandler(this.cbSavePassword_CheckedChanged);
             // 
@@ -235,10 +235,10 @@
             this.llForgotPassword.Enabled = false;
             this.llForgotPassword.Location = new System.Drawing.Point(20, 116);
             this.llForgotPassword.Name = "llForgotPassword";
-            this.llForgotPassword.Size = new System.Drawing.Size(114, 13);
+            this.llForgotPassword.Size = new System.Drawing.Size(67, 13);
             this.llForgotPassword.TabIndex = 10;
             this.llForgotPassword.TabStop = true;
-            this.llForgotPassword.Text = "Forgot your password?";
+            this.llForgotPassword.Text = "忘记密码？";
             // 
             // lStatus
             // 
@@ -246,9 +246,9 @@
             this.lStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lStatus.Location = new System.Drawing.Point(17, 3);
             this.lStatus.Name = "lStatus";
-            this.lStatus.Size = new System.Drawing.Size(101, 20);
+            this.lStatus.Size = new System.Drawing.Size(84, 20);
             this.lStatus.TabIndex = 11;
-            this.lStatus.Text = "Using Pinto";
+            this.lStatus.Text = "使用Pinto";
             // 
             // pbAd
             // 
@@ -284,7 +284,7 @@
             this.tpMain.Padding = new System.Windows.Forms.Padding(3);
             this.tpMain.Size = new System.Drawing.Size(390, 420);
             this.tpMain.TabIndex = 0;
-            this.tpMain.Text = "Main";
+            this.tpMain.Text = "主要内容";
             this.tpMain.UseVisualStyleBackColor = true;
             // 
             // tpRegister
@@ -298,7 +298,7 @@
             this.tpRegister.Padding = new System.Windows.Forms.Padding(3);
             this.tpRegister.Size = new System.Drawing.Size(390, 420);
             this.tpRegister.TabIndex = 1;
-            this.tpRegister.Text = "Register";
+            this.tpRegister.Text = "注册";
             this.tpRegister.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -307,9 +307,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(19, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 20);
+            this.label5.Size = new System.Drawing.Size(118, 20);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Register on Pinto";
+            this.label5.Text = "在Pinto上注册";
             // 
             // btnRegisterBack
             // 
@@ -317,7 +317,7 @@
             this.btnRegisterBack.Name = "btnRegisterBack";
             this.btnRegisterBack.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterBack.TabIndex = 13;
-            this.btnRegisterBack.Text = "Back";
+            this.btnRegisterBack.Text = "溯源";
             this.btnRegisterBack.UseVisualStyleBackColor = true;
             this.btnRegisterBack.Click += new System.EventHandler(this.btnRegisterBack_Click);
             // 
@@ -351,9 +351,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(19, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 9;
-            this.label7.Text = "Password:";
+            this.label7.Text = "密码：";
             // 
             // txtRegisterIP
             // 
@@ -361,16 +361,16 @@
             this.txtRegisterIP.Name = "txtRegisterIP";
             this.txtRegisterIP.Size = new System.Drawing.Size(106, 20);
             this.txtRegisterIP.TabIndex = 2;
-            this.txtRegisterIP.Text = "ponso00.com";
+            this.txtRegisterIP.Text = "MYPinto.ddns.net";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(19, 8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Username:";
+            this.label8.Text = "用户名：";
             // 
             // nudRegisterPort
             // 
@@ -407,9 +407,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(208, 34);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Port:";
+            this.label9.Text = "港口：";
             // 
             // txtRegisterUsername
             // 
@@ -424,7 +424,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 14;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "注册";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 

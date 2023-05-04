@@ -28,7 +28,7 @@ namespace PintoNS.Forms
 
         private void LoadLogin()
         {
-            Program.Console.WriteMessage("[General] Loading saved login information...");
+            Program.Console.WriteMessage("[General] 加载保存的登录信息...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "login.json");
@@ -45,16 +45,16 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to load the saved login information: {ex}");
+                    $" 无法加载保存的登录信息： {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to load the saved login information!",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法加载已保存的登录信息!",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
         private void SaveLogin()
         {
-            Program.Console.WriteMessage("[General] Saving login information...");
+            Program.Console.WriteMessage("[General] 保存登录信息...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "login.json");
@@ -70,16 +70,16 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to save the login information: {ex}");
+                    $" 保存登录信息... {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to save the login information!",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法保存登录信息!",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
         private void DeleteLogin()
         {
-            Program.Console.WriteMessage("[General] Deleting saved login information...");
+            Program.Console.WriteMessage("[General] 删除已保存的登录信息...");
             try
             {
                 string filePath = Path.Combine(mainForm.DataFolder, "login.json");
@@ -89,10 +89,10 @@ namespace PintoNS.Forms
             catch (Exception ex)
             {
                 Program.Console.WriteMessage($"[General]" +
-                    $" Unable to delete the saved login information: {ex}");
+                    $" 无法删除保存的登录信息： {ex}");
                 MsgBox.ShowNotification(this,
-                    "Unable to delete the saved login information!",
-                    "Error", MsgBoxIconType.ERROR);
+                    "无法删除已保存的登录信息!",
+                    "误差", MsgBoxIconType.ERROR);
             }
         }
 
@@ -116,7 +116,7 @@ namespace PintoNS.Forms
 
                 if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 {
-                    MsgBox.ShowNotification(this, "Blank username or password!",
+                    MsgBox.ShowNotification(this, "空白的用户名或密码!",
                         "Error", MsgBoxIconType.ERROR);
                     return;
                 }
@@ -140,9 +140,9 @@ namespace PintoNS.Forms
             llForgotPassword.Enabled = !state;
 
             if (state)
-                btnConnect.Text = "Continue";
+                btnConnect.Text = "继续";
             else
-                btnConnect.Text = "Connect";
+                btnConnect.Text = "连接";
         }
 
         private void UsingPintoForm_Load(object sender, EventArgs e)
@@ -162,8 +162,8 @@ namespace PintoNS.Forms
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MsgBox.ShowNotification(this, "Blank username or password!",
-                    "Error", MsgBoxIconType.ERROR);
+                MsgBox.ShowNotification(this, "空白的用户名或密码!",
+                    "误差", MsgBoxIconType.ERROR);
                 return;
             }
 
