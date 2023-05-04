@@ -51,15 +51,15 @@ namespace PintoNS.General
             switch (status)
             {
                 case UserStatus.ONLINE:
-                    return "Online";
+                    return "在线的";
                 case UserStatus.AWAY:
-                    return "Away";
+                    return "离开";
                 case UserStatus.BUSY:
-                    return "Busy";
+                    return "忙碌的";
                 case UserStatus.INVISIBLE:
-                    return "Invisible";
+                    return "无形的";
                 default:
-                    return "Offline";
+                    return "在线的";
             }
         }
     }

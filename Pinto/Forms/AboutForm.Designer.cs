@@ -67,7 +67,7 @@
             // 
             this.lVersion.AutoSize = true;
             this.lVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lVersion.Location = new System.Drawing.Point(119, 186);
+            this.lVersion.Location = new System.Drawing.Point(2, 252);
             this.lVersion.Name = "lVersion";
             this.lVersion.Size = new System.Drawing.Size(55, 13);
             this.lVersion.TabIndex = 3;
@@ -86,7 +86,8 @@
             // Translator2
             // 
             this.Translator2.AutoSize = true;
-            this.Translator2.Location = new System.Drawing.Point(10, 246);
+            this.Translator2.BackColor = System.Drawing.Color.Transparent;
+            this.Translator2.Location = new System.Drawing.Point(203, 252);
             this.Translator2.Name = "Translator2";
             this.Translator2.Size = new System.Drawing.Size(85, 13);
             this.Translator2.TabIndex = 5;
@@ -97,7 +98,8 @@
             // Translator1
             // 
             this.Translator1.AutoSize = true;
-            this.Translator1.Location = new System.Drawing.Point(12, 228);
+            this.Translator1.BackColor = System.Drawing.Color.Transparent;
+            this.Translator1.Location = new System.Drawing.Point(205, 234);
             this.Translator1.Name = "Translator1";
             this.Translator1.Size = new System.Drawing.Size(53, 13);
             this.Translator1.TabIndex = 6;
@@ -108,8 +110,9 @@
             // TranslatorsText
             // 
             this.TranslatorsText.AutoSize = true;
+            this.TranslatorsText.BackColor = System.Drawing.Color.Transparent;
             this.TranslatorsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TranslatorsText.Location = new System.Drawing.Point(10, 201);
+            this.TranslatorsText.Location = new System.Drawing.Point(203, 207);
             this.TranslatorsText.Name = "TranslatorsText";
             this.TranslatorsText.Size = new System.Drawing.Size(86, 24);
             this.TranslatorsText.TabIndex = 7;

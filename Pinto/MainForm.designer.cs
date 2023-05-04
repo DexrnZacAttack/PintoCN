@@ -351,32 +351,32 @@ namespace PintoNS
             // 
             this.tsmiStatusBarStatusOnline.Image = global::PintoNS.Statuses.ONLINE;
             this.tsmiStatusBarStatusOnline.Name = "tsmiStatusBarStatusOnline";
-            this.tsmiStatusBarStatusOnline.Size = new System.Drawing.Size(117, 22);
-            this.tsmiStatusBarStatusOnline.Text = "Online";
+            this.tsmiStatusBarStatusOnline.Size = new System.Drawing.Size(180, 22);
+            this.tsmiStatusBarStatusOnline.Text = "在线的";
             this.tsmiStatusBarStatusOnline.Click += new System.EventHandler(this.tsmiStatusBarStatusOnline_Click);
             // 
             // tsmiStatusBarStatusAway
             // 
             this.tsmiStatusBarStatusAway.Image = global::PintoNS.Statuses.AWAY;
             this.tsmiStatusBarStatusAway.Name = "tsmiStatusBarStatusAway";
-            this.tsmiStatusBarStatusAway.Size = new System.Drawing.Size(117, 22);
-            this.tsmiStatusBarStatusAway.Text = "Away";
+            this.tsmiStatusBarStatusAway.Size = new System.Drawing.Size(180, 22);
+            this.tsmiStatusBarStatusAway.Text = "离开";
             this.tsmiStatusBarStatusAway.Click += new System.EventHandler(this.tsmiStatusBarStatusAway_Click);
             // 
             // tsmiStatusBarStatusBusy
             // 
             this.tsmiStatusBarStatusBusy.Image = global::PintoNS.Statuses.BUSY;
             this.tsmiStatusBarStatusBusy.Name = "tsmiStatusBarStatusBusy";
-            this.tsmiStatusBarStatusBusy.Size = new System.Drawing.Size(117, 22);
-            this.tsmiStatusBarStatusBusy.Text = "Busy";
+            this.tsmiStatusBarStatusBusy.Size = new System.Drawing.Size(180, 22);
+            this.tsmiStatusBarStatusBusy.Text = "忙碌的";
             this.tsmiStatusBarStatusBusy.Click += new System.EventHandler(this.tsmiStatusBarStatusBusy_Click);
             // 
             // tsmiStatusBarStatusInvisible
             // 
             this.tsmiStatusBarStatusInvisible.Image = global::PintoNS.Statuses.INVISIBLE;
             this.tsmiStatusBarStatusInvisible.Name = "tsmiStatusBarStatusInvisible";
-            this.tsmiStatusBarStatusInvisible.Size = new System.Drawing.Size(117, 22);
-            this.tsmiStatusBarStatusInvisible.Text = "Invisible";
+            this.tsmiStatusBarStatusInvisible.Size = new System.Drawing.Size(180, 22);
+            this.tsmiStatusBarStatusInvisible.Text = "在线的";
             this.tsmiStatusBarStatusInvisible.Click += new System.EventHandler(this.tsmiStatusBarStatusInvisible_Click);
             // 
             // tsslStatusBarStatusText
@@ -417,28 +417,28 @@ namespace PintoNS
             // tsmiMenuBarFileAddContact
             // 
             this.tsmiMenuBarFileAddContact.Name = "tsmiMenuBarFileAddContact";
-            this.tsmiMenuBarFileAddContact.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarFileAddContact.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarFileAddContact.Text = "添加联系人";
             this.tsmiMenuBarFileAddContact.Click += new System.EventHandler(this.tsmiMenuBarFileAddContact_Click);
             // 
             // tsmiMenuBarFileRemoveContact
             // 
             this.tsmiMenuBarFileRemoveContact.Name = "tsmiMenuBarFileRemoveContact";
-            this.tsmiMenuBarFileRemoveContact.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarFileRemoveContact.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarFileRemoveContact.Text = "移除联系人";
             this.tsmiMenuBarFileRemoveContact.Click += new System.EventHandler(this.tsmiMenuBarFileRemoveContact_Click);
             // 
             // tsmiMenuBarFileLogOut
             // 
             this.tsmiMenuBarFileLogOut.Name = "tsmiMenuBarFileLogOut";
-            this.tsmiMenuBarFileLogOut.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarFileLogOut.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarFileLogOut.Text = "登出";
             this.tsmiMenuBarFileLogOut.Click += new System.EventHandler(this.tsmiMenuBarFileLogOut_Click);
             // 
             // tsmiMenuBarFileExit
             // 
             this.tsmiMenuBarFileExit.Name = "tsmiMenuBarFileExit";
-            this.tsmiMenuBarFileExit.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarFileExit.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarFileExit.Text = "退出";
             this.tsmiMenuBarFileExit.Click += new System.EventHandler(this.tsmiMenuBarFileExit_Click);
             // 
@@ -457,7 +457,7 @@ namespace PintoNS
             // tsmiMenuBarToolsOptions
             // 
             this.tsmiMenuBarToolsOptions.Name = "tsmiMenuBarToolsOptions";
-            this.tsmiMenuBarToolsOptions.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarToolsOptions.Size = new System.Drawing.Size(100, 22);
             this.tsmiMenuBarToolsOptions.Text = "选择";
             this.tsmiMenuBarToolsOptions.Click += new System.EventHandler(this.tsmiMenuBarToolsOptions_Click);
             // 
@@ -477,14 +477,14 @@ namespace PintoNS
             // tsmiMenuBarHelpToggleConsole
             // 
             this.tsmiMenuBarHelpToggleConsole.Name = "tsmiMenuBarHelpToggleConsole";
-            this.tsmiMenuBarHelpToggleConsole.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarHelpToggleConsole.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarHelpToggleConsole.Text = "切换控制台";
             this.tsmiMenuBarHelpToggleConsole.Click += new System.EventHandler(this.tsmiMenuBarHelpToggleConsole_Click);
             // 
             // tsmiMenuBarHelpAbout
             // 
             this.tsmiMenuBarHelpAbout.Name = "tsmiMenuBarHelpAbout";
-            this.tsmiMenuBarHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMenuBarHelpAbout.Size = new System.Drawing.Size(135, 22);
             this.tsmiMenuBarHelpAbout.Text = "关于";
             this.tsmiMenuBarHelpAbout.Click += new System.EventHandler(this.tsmiMenuBarHelpAbout_Click);
             // 

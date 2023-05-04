@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PintoNS.Networking
 {
-    public class ConnectionException : Exception 
+    public class ConnectionException : Exception
     {
         public ConnectionException(string message) : base(message) { }
     }
@@ -28,9 +28,13 @@ namespace PintoNS.Networking
         private Thread sendThread;
         public Action<string> Disconnected = delegate (string reason) { };
         public Action<IPacket> ReceivedPacket = delegate (IPacket packet) { };
+        private object sendQueueLock = new object();
+        private object sendQueueLock2 = new object();
         private LinkedList<IPacket> packetSendQueue = new LinkedList<IPacket>();
+        private LinkedList<IPacket> packetSendQueue2 = new LinkedList<IPacket>();
+        private bool flushingSendQueue;
 
-        public async Task<(bool, Exception)> Connect(string ip, int port) 
+        public async Task<(bool, Exception)> Connect(string ip, int port)
         {
             try
             {
@@ -56,7 +60,7 @@ namespace PintoNS.Networking
             }
         }
 
-        public void Disconnect(string reason) 
+        public void Disconnect(string reason)
         {
             bool ignoreDisconnectReasonValue = ignoreDisconnectReason;
             ignoreDisconnectReason = true;
@@ -67,59 +71,105 @@ namespace PintoNS.Networking
             tcpStream = null;
             readThread = null;
             sendThread = null;
-            
-            if (IsConnected && !ignoreDisconnectReasonValue) 
+
+            if (IsConnected && !ignoreDisconnectReasonValue)
             {
                 Disconnected.Invoke(reason);
             }
             IsConnected = false;
         }
 
-        public void AddToSendQueue(IPacket packet) 
+        public void AddToSendQueue(IPacket packet)
         {
             if (!IsConnected) return;
             Program.Console.WriteMessage($"[Networking] 添加的数据包 {packet.GetType().Name.ToUpper()}" +
                 $" ({packet.GetID()}) 到发送队列中");
-            packetSendQueue.AddLast(packet);
+
+            if (flushingSendQueue)
+                lock (sendQueueLock2)
+                    packetSendQueue2.AddLast(packet);
+            else
+                lock (sendQueueLock)
+                    packetSendQueue.AddLast(packet);
         }
 
-        public void ClearSendQueue() 
+        public void ClearSendQueue()
         {
-            packetSendQueue.Clear();
+            lock (sendQueueLock)
+                packetSendQueue.Clear();
+            lock (sendQueueLock2)
+                packetSendQueue2.Clear();
         }
 
-        public void FlushSendQueue() 
+        public void FlushSendQueue()
         {
             if (!IsConnected) return;
+            flushingSendQueue = true;
 
-            foreach (IPacket packet in packetSendQueue.ToArray())
+            lock (sendQueueLock)
             {
-                packetSendQueue.Remove(packet);
+                BinaryWriter writer = new BinaryWriter(tcpStream, Encoding.UTF8, true);
+                foreach (IPacket packet in packetSendQueue.ToArray())
+                {
+                    try
+                    {
+                        if (!IsConnected) return;
+                        if (packet == null) continue;
+                        writer.Write((byte)packet.GetID());
+                        packet.Write(writer);
+                    }
+                    catch (Exception ex)
+                    {
+                        Disconnect($"Internal error -> {ex.Message}");
+                        Program.Console.WriteMessage($"[Networking]" +
+                            $" 无法写入数据包 {packet.GetID()}: {ex}");
+                        MsgBox.ShowNotification(null,
+                        "发生了一个内部错误! 欲了解更多信息、" +
+                        " 检查控制台（帮助>切换控制台）。",
+                        "内部错误",
+                            MsgBoxIconType.ERROR);
+                    }
+                }
+
                 try
                 {
-                    if (!IsConnected) return;
-                    if (packet == null) continue;
-                    BinaryWriter writer = new BinaryWriter(tcpStream, Encoding.UTF8, true);
-                    writer.Write((byte)packet.GetID());
-                    packet.Write(writer);
                     writer.Flush();
-                    writer.Dispose();
                 }
                 catch (Exception ex)
                 {
-                    Disconnect($"内部错误 -> {ex.Message}");
+                    Disconnect($"Internal error -> {ex.Message}");
                     Program.Console.WriteMessage($"[Networking]" +
-                        $" 无法发送数据包 {packet.GetID()}: {ex}");
+                        $" 无法发送数据包: {ex}");
                     MsgBox.ShowNotification(null,
                         "发生了一个内部错误! 欲了解更多信息、" +
                         " 检查控制台（帮助>切换控制台）。",
                         "内部错误",
                         MsgBoxIconType.ERROR);
                 }
+                packetSendQueue.Clear();
+            }
+            lock (sendQueueLock2)
+                MergeSecondSendQueue();
+
+            flushingSendQueue = false;
+        }
+
+        private void MergeSecondSendQueue()
+        {
+            lock (sendQueueLock2)
+            {
+                lock (sendQueueLock)
+                {
+                    foreach (IPacket packet in packetSendQueue2.ToArray())
+                    {
+                        packetSendQueue.AddLast(packet);
+                    }
+                }
+                packetSendQueue2.Clear();
             }
         }
 
-        private void ReadThread_Func() 
+        private void ReadThread_Func()
         {
             while (IsConnected)
             {
@@ -153,15 +203,15 @@ namespace PintoNS.Networking
                 {
                     if (!(ex is IOException || ex is ConnectionException))
                     {
-                        Disconnect($"内部错误 -> {ex.Message}");
-                        Program.Console.WriteMessage($"内部错误： {ex}");
+                        Disconnect($"Internal error -> {ex.Message}");
+                        Program.Console.WriteMessage($"Internal error: {ex}");
                         MsgBox.ShowNotification(null,
                         "发生了一个内部错误! 欲了解更多信息、" +
                         " 检查控制台（帮助>切换控制台）。",
                         "内部错误",
                             MsgBoxIconType.ERROR);
                     }
-                    else 
+                    else
                     {
                         Disconnect(ex.Message);
                     }
@@ -170,12 +220,12 @@ namespace PintoNS.Networking
             }
         }
 
-        private void SendThread_Func() 
+        private void SendThread_Func()
         {
-            while (IsConnected) 
+            while (IsConnected)
             {
                 FlushSendQueue();
-                Thread.Sleep(1);
+                Thread.Sleep(100);
             }
         }
     }
