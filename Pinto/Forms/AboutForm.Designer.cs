@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lVersion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Translator2 = new System.Windows.Forms.LinkLabel();
+            this.Translator1 = new System.Windows.Forms.LinkLabel();
+            this.TranslatorsText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +67,7 @@
             // 
             this.lVersion.AutoSize = true;
             this.lVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lVersion.Location = new System.Drawing.Point(12, 245);
+            this.lVersion.Location = new System.Drawing.Point(119, 186);
             this.lVersion.Name = "lVersion";
             this.lVersion.Size = new System.Drawing.Size(55, 13);
             this.lVersion.TabIndex = 3;
@@ -74,11 +77,43 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(115, 158);
+            this.label3.Location = new System.Drawing.Point(115, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "深吸一口气...";
+            // 
+            // Translator2
+            // 
+            this.Translator2.AutoSize = true;
+            this.Translator2.Location = new System.Drawing.Point(10, 246);
+            this.Translator2.Name = "Translator2";
+            this.Translator2.Size = new System.Drawing.Size(85, 13);
+            this.Translator2.TabIndex = 5;
+            this.Translator2.TabStop = true;
+            this.Translator2.Text = "DexrnZacAttack";
+            this.Translator2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Translator2_LinkClicked);
+            // 
+            // Translator1
+            // 
+            this.Translator1.AutoSize = true;
+            this.Translator1.Location = new System.Drawing.Point(12, 228);
+            this.Translator1.Name = "Translator1";
+            this.Translator1.Size = new System.Drawing.Size(53, 13);
+            this.Translator1.TabIndex = 6;
+            this.Translator1.TabStop = true;
+            this.Translator1.Text = "mc_kuhei";
+            this.Translator1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Translator1_LinkClicked);
+            // 
+            // TranslatorsText
+            // 
+            this.TranslatorsText.AutoSize = true;
+            this.TranslatorsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TranslatorsText.Location = new System.Drawing.Point(10, 201);
+            this.TranslatorsText.Name = "TranslatorsText";
+            this.TranslatorsText.Size = new System.Drawing.Size(86, 24);
+            this.TranslatorsText.TabIndex = 7;
+            this.TranslatorsText.Text = "翻译人员";
             // 
             // AboutForm
             // 
@@ -87,6 +122,9 @@
             this.BackgroundImage = global::PintoNS.Logo.LOGO_BACKGROUND;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(291, 267);
+            this.Controls.Add(this.TranslatorsText);
+            this.Controls.Add(this.Translator1);
+            this.Controls.Add(this.Translator2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lVersion);
             this.Controls.Add(this.label1);
@@ -115,5 +153,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lVersion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel Translator2;
+        private System.Windows.Forms.LinkLabel Translator1;
+        private System.Windows.Forms.Label TranslatorsText;
     }
 }
