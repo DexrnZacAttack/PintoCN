@@ -82,7 +82,7 @@ namespace PintoNS.Networking
         public void AddToSendQueue(IPacket packet)
         {
             if (!IsConnected) return;
-            Program.Console.WriteMessage($"[Networking] 添加的数据包 {packet.GetType().Name.ToUpper()}" +
+            Program.Console.WriteMessage($"[联网] 添加的数据包 {packet.GetType().Name.ToUpper()}" +
                 $" ({packet.GetID()}) 到发送队列中");
 
             if (flushingSendQueue)
@@ -120,8 +120,8 @@ namespace PintoNS.Networking
                     }
                     catch (Exception ex)
                     {
-                        Disconnect($"Internal error -> {ex.Message}");
-                        Program.Console.WriteMessage($"[Networking]" +
+                        Disconnect($"内部错误 -> {ex.Message}");
+                        Program.Console.WriteMessage($"[联网]" +
                             $" 无法写入数据包 {packet.GetID()}: {ex}");
                         MsgBox.ShowNotification(null,
                         "发生了一个内部错误! 欲了解更多信息、" +
@@ -138,7 +138,7 @@ namespace PintoNS.Networking
                 catch (Exception ex)
                 {
                     Disconnect($"Internal error -> {ex.Message}");
-                    Program.Console.WriteMessage($"[Networking]" +
+                    Program.Console.WriteMessage($"[联网]" +
                         $" 无法发送数据包: {ex}");
                     MsgBox.ShowNotification(null,
                         "发生了一个内部错误! 欲了解更多信息、" +
